@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Genshin_MMD_Viewer</title>
+<script type="text/javascript" charset="utf-8" src="libs/gl-matrix.js"></script>
+<script type="text/javascript" charset="utf-8" src="libs/glMatrixUtils.js"></script>
+<script type="text/javascript" charset="utf-8" src="libs/sjis.js"></script>
+<script type="text/javascript" charset="utf-8" src="MMD.js"></script>
+<script type="text/javascript" charset="utf-8" src="main.js"></script>
+<style>
+table, button {
+  margin: 10px;
+}
+
+</style>
+<header>
+  <h1>Genshin MMD Viewer<span style="font-size: small"></span></h1>
+  <ul>
+    <li>左/右/上/下キー または マウスドラッグ：画角<br>
+        Left/Right/Up/Down keys or Mouse drag: View angle
+    </il>
+    <li>Shift+左/右/上/下キー または Shift+マウスドラッグ：中央位置<br>
+        Shift+Left/Right/Up/Down keys or Shift+Mouse drag: Center position
+    </il>
+    <li>マウスホイール：距離<br>
+        Mouse wheel: Distance
+    </il>
+  </ul>
+</header>
+<body>
+  <table border="1" cellspacing="0" cellpadding="5" bordercolor="#333333">
+    <tr>
+      <th bgcolor="#EE0000" width="200"><font color="#FFFFFF">表示モデル</font></th>
+      <th bgcolor="#EE0000" width="500"><font color="#FFFFFF"></font></th>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" width="200" height="500">
+        <button type="button" id="diluc" onclick="view('diluc')">ディルック(diluc)</button><br>
+        <button type="button" id="kaeya" onclick="view('kaeya')">ガイア(kaeya)</button><br>
+        <button type="button" id="zhongli" onclick="view('zhongli')">鍾離(zhongli)</button><br>
+        <button type="button" id="childe" onclick="view('childe')">タルタリヤ(childe)</button><br>
+      </td>
+      <td bgcolor="#FFFFFF" width="500" height="500">
+        <div id="viewer"></div>
+      </td>
+    </tr>
+  </table>
+  <ul>
+    <li>モデルはmiHoyo様、神帝宇様、观海様からお借りしています。</il>
+    <li>パーツごとの表示非表示機能については、元々結合されて配布しているものも多かったので、付けていません。<br>
+        ただ、ガイアのもふもふとかマントとかなら着脱可能なものもあるので、需要（と時間）があればいつか実装します。
+    </il>
+    <li>PC版のChromeとEdgeで動作確認済みです。<br>
+        <font color ="red">現時点ではスマホでは操作する機能は作成していません。</font>（そのうち実装します…多分。）
+　　</il>
+    <li>何かあれば下記までご連絡ください。<br>
+       （誰々でもみたい！こういった機能を追加ほしい！などでもOKです）<br>
+        Twitter：@shinobu_21<br>
+    </il>
+    <li>このページのソースコードなどについては下記ブログに記載してます。<br>
+        興味がある方はどうぞ→https://shinobu-21.hatenablog.com/
+    </il>
+  </ul>
+</body>
