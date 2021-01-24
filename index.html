@@ -10,23 +10,61 @@
 table, button {
   margin: 10px;
 }
-
 </style>
-<header>
-  <h1>Genshin MMD Viewer<span style="font-size: small"></span></h1>
-  <ul>
-    <li>左/右/上/下キー または マウスドラッグ：画角<br>
-        Left/Right/Up/Down keys or Mouse drag: View angle
-    </il>
-    <li>Shift+左/右/上/下キー または Shift+マウスドラッグ：中央位置<br>
-        Shift+Left/Right/Up/Down keys or Shift+Mouse drag: Center position
-    </il>
-    <li>マウスホイール：距離<br>
-        Mouse wheel: Distance
-    </il>
-  </ul>
-</header>
+
 <body>
+  <p><b>Genshin MMD Viewer</b></p>
+  <div onclick="obj=document.getElementById('about').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;"><u>▼概要（About）</u></a>
+  </div>
+  <div id="about" style="display:none;clear:both;">
+    <ul>
+      <li>モデルはmiHoyo様、神帝宇様、观海様からお借りしています。</il>
+      <li>モデルの身長については適切でないため参考にしないでください。</il>
+      <li>現在原因の調査中ですが一部モデルの肌のテクスチャが通常より薄くなってますのでご注意ください。</il>
+      <li>パーツごとの表示非表示機能については、元々結合されて配布しているため、付けていません。<br>
+          ただ、ガイアのもふもふとかマントとかなら着脱可能なものもあるので、需要（と時間）があればいつか実装します。
+      </il>
+      <li>PC版のChromeとEdgeで動作確認済みです。<br>
+          <font color ="red">現時点ではスマホでは操作する機能は作成していません。(PC Only)</font>（そのうち実装します…多分。）
+　  　</il>
+      <li>何かあれば下記までご連絡ください。<br>
+         （誰々でもみたい！こういった機能を追加ほしい！などでもOKです）<br>
+          Twitter：@shinobu_21<br>
+      </il>
+      <li>このページのソースコードなどについては下記ブログに記載してます。<br>
+          興味がある方はどうぞ→https://shinobu-21.hatenablog.com/
+      </il>
+    </ul>
+  </div>
+
+  <div onclick="obj=document.getElementById('update').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;"><u>▼更新履歴（Update）</u></a>
+  </div>
+  <div id="update" style="display:none;clear:both;">
+    <ul>
+      <li>2021/1/23 ガイア・ディルック・鍾離・タルタリヤ　公開</il>
+      <li>2021/1/24 ウェンティ・アルベド・行秋・重雲・刻晴　公開</il>
+    </ul>
+  </div>
+
+  <div onclick="obj=document.getElementById('guide').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;"><u>▼操作方法（User Guide）</u></a>
+  </div>
+  <div id="guide" style="display:none;clear:both;">
+    <ul>
+      <li>左/右/上/下キー または マウスドラッグ：画角<br>
+          Left/Right/Up/Down keys or Mouse drag: View angle
+      </il>
+      <li>Shift+左/右/上/下キー または Shift+マウスドラッグ：中央位置<br>
+          Shift+Left/Right/Up/Down keys or Shift+Mouse drag: Center position
+      </il>
+      <li>マウスホイール：距離<br>
+          Mouse wheel: Distance
+      </il>
+    </ul>
+  </div>
+
   <table border="1" cellspacing="0" cellpadding="5" bordercolor="#333333">
     <tr>
       <th bgcolor="#EE0000" width="200"><font color="#FFFFFF">表示モデル</font></th>
@@ -34,30 +72,20 @@ table, button {
     </tr>
     <tr>
       <td bgcolor="#FFFFFF" width="200" height="500">
-        <button type="button" id="diluc" onclick="view('diluc')">ディルック(diluc)</button><br>
-        <button type="button" id="kaeya" onclick="view('kaeya')">ガイア(kaeya)</button><br>
-        <button type="button" id="zhongli" onclick="view('zhongli')">鍾離(zhongli)</button><br>
-        <button type="button" id="childe" onclick="view('childe')">タルタリヤ(childe)</button><br>
+        <button type="button" id="diluc" onclick="view('diluc')">ディルック(Diluc)</button><br>
+        <button type="button" id="kaeya" onclick="view('kaeya')">ガイア(Kaeya)</button><br>
+        <button type="button" id="zhongli" onclick="view('zhongli')">鍾離(Zhongli)</button><br>
+        <button type="button" id="childe" onclick="view('childe')">タルタリヤ(Childe)</button><br>
+        <button type="button" id="venti" onclick="view('venti')">ウェンティ(Venti)</button><br>
+        <button type="button" id="venti" onclick="view('albedo')">アルベド(Albedo)</button><br>
+        <button type="button" id="venti" onclick="view('xingqiu')">行秋(Xingqiu)</button><br>
+        <button type="button" id="venti" onclick="view('chongyun')">重雲(Chongyun)</button><br>
+        <button type="button" id="venti" onclick="view('kequing')">刻晴(Kequing)</button><br>
       </td>
       <td bgcolor="#FFFFFF" width="500" height="500">
         <div id="viewer"></div>
       </td>
     </tr>
   </table>
-  <ul>
-    <li>モデルはmiHoyo様、神帝宇様、观海様からお借りしています。</il>
-    <li>パーツごとの表示非表示機能については、元々結合されて配布しているものも多かったので、付けていません。<br>
-        ただ、ガイアのもふもふとかマントとかなら着脱可能なものもあるので、需要（と時間）があればいつか実装します。
-    </il>
-    <li>PC版のChromeとEdgeで動作確認済みです。<br>
-        <font color ="red">現時点ではスマホでは操作する機能は作成していません。</font>（そのうち実装します…多分。）
-　　</il>
-    <li>何かあれば下記までご連絡ください。<br>
-       （誰々でもみたい！こういった機能を追加ほしい！などでもOKです）<br>
-        Twitter：@shinobu_21<br>
-    </il>
-    <li>このページのソースコードなどについては下記ブログに記載してます。<br>
-        興味がある方はどうぞ→https://shinobu-21.hatenablog.com/
-    </il>
-  </ul>
 </body>
+  </div>

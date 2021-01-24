@@ -19,6 +19,21 @@ function view(id){
     case 'childe':
       modelName = 'タルタリヤ.pmd';
       break;
+    case 'venti':
+      modelName = 'ウェンティ.pmd';
+      break;
+    case 'albedo':
+      modelName = 'アルベド.pmd';
+      break;
+    case 'xingqiu':
+      modelName = '行秋.pmd';
+      break;
+    case 'chongyun':
+      modelName = '重雲.pmd';
+      break;
+    case 'kequing':
+      modelName = '刻晴.pmd';
+      break;
     default:
       return;
   }
