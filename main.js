@@ -49,6 +49,12 @@ function view(id){
     case 'barbara':
       modelName = 'バーバラ.pmd';
       break;
+    case 'aether':
+      modelName = '空.pmd';
+      break;
+    case 'lumine':
+      modelName = '蛍.pmd';
+      break;
     default:
       return;
   }
@@ -79,6 +85,17 @@ function view(id){
     mmd.addModel(model);
     mmd.initBuffers();
     mmd.start();
+
+    //そのうち実装する
+    //var dance = new MMD.Motion('motion/kishimen.vmd');
+    //dance.load(function() {
+    //  mmd.addModelMotion(model, dance, true);
+    //  mmd.play();
+    //  setInterval(function() {
+    //    console.log('fps = ' + mmd.realFps);
+    //  }, 1000);
+    //});
+
   });
 
 }
