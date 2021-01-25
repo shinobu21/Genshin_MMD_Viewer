@@ -34,6 +34,21 @@ function view(id){
     case 'kequing':
       modelName = '刻晴.pmd';
       break;
+    case 'hilichurl':
+      modelName = 'ヒルチャール.pmd';
+      break;
+    case 'unusual_Hilichurl':
+      modelName = '変わったヒルチャール.pmd';
+      break;
+    case 'paimon':
+      modelName = 'パイモン.pmd';
+      break;
+    case 'amber':
+      modelName = 'アンバー.pmd';
+      break;
+    case 'barbara':
+      modelName = 'バーバラ.pmd';
+      break;
     default:
       return;
   }
