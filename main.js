@@ -55,6 +55,15 @@ function view(id){
     case 'lumine':
       modelName = '蛍.pmd';
       break;
+    case 'xinyan':
+      modelName = '辛炎.pmd';
+      break;
+    case 'klee':
+      modelName = 'クレー.pmd';
+      break;
+    case 'sucrose':
+      modelName = 'スクロース.pmd';
+      break;
     default:
       return;
   }
