@@ -64,6 +64,9 @@ function view(id){
     case 'sucrose':
       modelName = 'スクロース.pmd';
       break;
+    case 'xiao':
+      modelName = 'ショウ.pmd';
+      break;
     default:
       return;
   }
